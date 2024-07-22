@@ -104,16 +104,16 @@ export default function Index() {
   const truncatedOutput = output.slice(0, 500);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg p-6 space-y-6">
-        <h1 className="text-3xl font-bold text-center text-white">Project Scaffolder</h1>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-white shadow-md rounded-xl p-6 space-y-6">
+        <h1 className="text-3xl font-bold text-center text-gray-800">Project Scaffolder</h1>
         <Form method="post" className="space-y-4">
           <div>
-            <label htmlFor="projectName" className="block text-sm font-medium text-white">Project Name:</label>
+            <label htmlFor="projectName" className="block text-sm font-medium text-gray-700">Project Name:</label>
             <input type="text" id="projectName" name="projectName" required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" />
           </div>
           <div>
-            <label htmlFor="region" className="block text-sm font-medium text-white">Deployment Region:</label>
+            <label htmlFor="region" className="block text-sm font-medium text-gray-700">Deployment Region:</label>
             <select id="region" name="region" defaultValue="arn" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2">
               {flyRegions.map((region) => (
                 <option key={region.code} value={region.code}>
@@ -122,20 +122,20 @@ export default function Index() {
               ))}
             </select>
           </div>
-          <button type="submit" className="w-full py-4 px-6 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+          <button type="submit" className="w-full py-4 px-6 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-100 bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900 transition duration-150 ease-in-out">
             Create Project
           </button>
         </Form>
 
         {navigation.state === "submitting" && (
           <div className="text-center">
-            <p className="text-white font-semibold animate-pulse">Creating project...</p>
+            <p className="text-gray-800 font-semibold animate-pulse">Creating project...</p>
           </div>
         )}
 
         {output && (
           <div className="mt-6">
-            <h2 className="text-xl font-semibold text-white mb-2">Output:</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">Output:</h2>
             <div className="bg-gray-800 rounded-md p-4 max-h-60 overflow-auto">
               <pre className="text-sm text-gray-300 whitespace-pre-wrap">{showMore ? output : truncatedOutput}</pre>
             </div>
