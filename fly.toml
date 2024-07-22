@@ -3,8 +3,8 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "remix-vite-template"
-primary_region = "iad"
+app = "scaffolder"
+primary_region = "arn"
 
 [build]
 
